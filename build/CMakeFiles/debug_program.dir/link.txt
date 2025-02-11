@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -g -O0 CMakeFiles/debug_program.dir/Class/dynamic_mem_alloc.cpp.o -o debug_program 
