@@ -1,0 +1,10 @@
+Inheritance :
+base class type object can only access the base class member functions and the data members even though there is a virtual function 
+this is for the normal class object   
+    Ex : A object = b_object 
+
+Virtual :
+in case the base class function have virtual in it the derived class member fucntion having the 
+override will be called or the function with same name as the virtual func name in the base class will be called 
+this is for the ref and pointer objects of base class 
+    Ex : A * ptr = &b_object        or       A & ref = *b_ptr 
