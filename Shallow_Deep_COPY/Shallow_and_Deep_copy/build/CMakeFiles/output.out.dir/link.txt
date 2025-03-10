@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/output.out.dir/SampleClass.cpp.o CMakeFiles/output.out.dir/main_program.cpp.o -o output.out  ../library.a 
