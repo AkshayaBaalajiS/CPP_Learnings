@@ -1,3 +1,0 @@
-/home/akshayabaalaji-s/C++_Learning/build/CMakeFiles/debug_program.dir
-/home/akshayabaalaji-s/C++_Learning/build/CMakeFiles/edit_cache.dir
-/home/akshayabaalaji-s/C++_Learning/build/CMakeFiles/rebuild_cache.dir
