@@ -1,3 +1,0 @@
-/home/akshayabaalaji-s/GITREPO/CMake_Prac_5/build/CMakeFiles/output.txt.dir
-/home/akshayabaalaji-s/GITREPO/CMake_Prac_5/build/CMakeFiles/edit_cache.dir
-/home/akshayabaalaji-s/GITREPO/CMake_Prac_5/build/CMakeFiles/rebuild_cache.dir
