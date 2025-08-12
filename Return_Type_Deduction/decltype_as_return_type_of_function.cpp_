@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+auto function_return_square(auto var)
+{
+	return var * var ;
+}
+
+
+int main()
+{
+	int number = 5;
+	int result = function_return_square(number);
+	cout<<"Number  = " << number << " result = " << result << endl;
+
+	int && ref = 55;
+	int && result_ref = function_return_square(ref); 
+	cout<<"ref = " << ref << " result_ref = " << result_ref << endl;
+
+	int & ref_1 = 5;
+	int & resukt_ref_1 = function_return_square(ref_1);
+}
