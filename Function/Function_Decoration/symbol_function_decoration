@@ -1,0 +1,16 @@
+                 U __cxa_atexit
+                 U __dso_handle
+                 U _GLOBAL_OFFSET_TABLE_
+000000000000018f t _GLOBAL__sub_I__Z17function_to_do_sov
+00000000000000d6 T main
+000000000000007c T _Z17function_to_do_soc
+00000000000000a9 T _Z17function_to_do_sod
+000000000000004f T _Z17function_to_do_sof
+0000000000000024 T _Z17function_to_do_soi
+0000000000000000 T _Z17function_to_do_sov
+0000000000000139 t _Z41__static_initialization_and_destruction_0ii
+                 U _ZNSt8ios_base4InitC1Ev
+                 U _ZNSt8ios_base4InitD1Ev
+                 U _ZSt4cout
+0000000000000000 b _ZStL8__ioinit
+                 U _ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc

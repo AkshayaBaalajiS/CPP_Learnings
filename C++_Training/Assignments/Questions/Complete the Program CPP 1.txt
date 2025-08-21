@@ -1,0 +1,695 @@
+#include<iostream>
+
+using namespace std;
+
+const float  pi=3.14156;
+ 
+class Circle{
+
+    private:
+
+       float radius, circumference;
+
+       float area, diameter;
+
+     public:
+
+        Circle(){
+
+        }
+
+        Circle(float   r){
+
+	   }
+
+        void set_radius(float  r){
+
+        }
+
+        void fn_area(void){
+
+        }
+
+        void fn_circumference(void){
+
+        }
+
+        void fn_diameter(void){
+
+        }
+
+        float get_radius(){
+
+                   }
+
+        float get_diameter(){
+
+        }
+
+        float get_area(){
+
+        }
+
+       float get_circumference(){
+
+       }
+
+};
+
+int main()
+
+{
+
+    Circle  c1(10.0);
+
+    //c1.set_radius(25.5);
+
+    c1.fn_area();
+
+    c1.fn_circumference();
+
+    c1.fn_diameter();
+
+    cout<<"radius is "<<c1.get_radius()<<endl;
+
+    cout<<"diameter is "<<c1.get_diameter()<<endl;
+
+    cout<<"Area is "<<c1.get_area()<<endl;
+
+    cout<<"Circumference is "<<c1.get_circumference()<<endl;  
+
+}
+ 
+#include<iostream>
+
+#include<cmath>
+
+using namespace std;
+ 
+class RTriangle{
+
+     private:
+
+         float   base ;
+
+         float   height;
+
+         float   area;
+
+         float   perimeter;
+
+		 static float  pi;
+
+     public:
+
+         RTriangle(){
+
+         ~RTriangle(){cout<<"In destructor\n"; }
+
+         RTriangle(float b, float h){
+
+         }
+
+         void setBase(float   b){
+
+          }
+
+         void setHeight(float  h){
+
+         }
+
+         float getBase(void){
+
+              return base;
+
+          }
+
+         float getHeight(void){
+
+               return height;
+
+         }
+
+         float getArea(void){
+
+               return(area);
+
+          }
+
+         float getPerimeter(void){
+
+               return (perimeter);
+
+         }
+
+         float  fnArea(void);
+
+         float  fnPerimeter(void);
+
+};
+ 
+float   RTriangle::pi=3.14156f;
+ 
+float  RTriangle::fnArea(void){
+
+}
+
+float  RTriangle::fnPerimeter(void){
+
+    }
+
+int main()
+
+{
+
+      RTriangle   *ptr=NULL;
+
+      RTriangle   obj(23.123,232.23);
+
+      obj.fnArea();
+
+      obj.fnPerimeter();
+ 
+      obj.setBase(236.8);
+
+      cout <<"Area is : "<<obj.fnArea()<<endl;
+
+      cout <<"Perimeter is : "<<obj.fnPerimeter()<<endl;
+ 
+      ptr = new  RTriangle(123.24,65.7213);
+ 
+      cout <<"Area is : "<<ptr->fnArea()<<endl;
+
+      cout <<"Perimeter is : "<<ptr->fnPerimeter()<<endl;
+
+      cout <<"Pi is : "<<RTriangle::pi<<endl;
+
+      delete  ptr;
+
+}
+ 
+[11:38 AM] Vikas Karanth U
+#include <iostream>
+ 
+using namespace std;
+
+const int imax=1024;
+
+class Stack
+
+{
+
+    int data[imax];
+
+    int  sp,   itop;
+
+    public:
+
+    void setup(void){
+
+    }
+
+    void push(int val){
+
+    }
+
+    int pop(){
+
+    }
+
+    bool isStackFull(){
+
+    }
+
+    bool isStackEmpty(){
+
+            }
+
+    int top(){
+
+        return data[sp-1];
+
+    }
+
+    int size(){
+
+        return sp;
+
+    }
+
+};
+ 
+int main()
+
+{
+
+    Stack obj;
+
+    obj.setup();
+
+    obj.push(5);
+
+    obj.push(15);
+
+    obj.push(50);
+
+    obj.push(25);
+
+    obj.push(51);
+
+    cout <<"Top element is : "<<obj.top()<<endl;
+
+    cout <<"Size of stack is : "<<obj.size()<<endl;
+
+    cout <<obj.pop()<<endl;
+
+    cout <<obj.pop()<<endl;
+
+    cout <<obj.pop()<<endl;
+
+    cout <<obj.pop()<<endl;
+
+    cout <<obj.pop()<<endl;
+
+    cout <<"Size of stack is : "<<obj.size()<<endl;
+ 
+    return 0;
+
+}
+
+
+#include<iostream>
+using namespace std;
+ 
+class Box{
+    float  height;
+    float  width;
+    float  length;
+    float  volume;
+    float surfacearea;
+ 
+    public:
+       Box(){}
+       ~Box(){}
+ 
+       Box(float h, float w, float l){
+       }
+       Box(Box & b){
+       }
+       void setHeight(float h){
+           height = h;
+       }
+       void setLength(float l){
+           length = l;
+       }
+       void setWidth(float w){
+           width = w;
+       }
+       double fnVolume(){
+           return  volume;
+       }
+       double  fnsurfacearea(){
+           return surfacearea;
+       }
+       float  getVolume(){
+           return volume;
+       }
+       float getSurfaceArea(){
+           return surfacearea;
+       }
+       void Print(){
+           cout <<"volume is : "<<volume<<endl;
+           cout <<"surfacearea is:"<<surfacearea<<endl;
+       }
+       float getHeight(void){
+           return height;
+       }
+       float getLength(void){
+           return length;
+       }
+       float getWidth(void){
+           return width;
+       }
+ 
+};
+int main()
+{
+    Box   obj(12.6,21.3,41.5);
+    obj.fnVolume();
+    obj.fnsurfacearea();
+    obj.Print();
+ 
+    cout <<obj.getHeight()<<endl;
+    cout <<obj.getLength()<<endl;
+    cout <<obj.getVolume()<<endl;
+ 
+    Box   objA(obj);
+    objA.fnVolume();
+    objA.fnsurfacearea();
+    objA.Print();
+ 
+    cout <<objA.getHeight()<<endl;
+    cout <<objA.getLength()<<endl;
+    cout <<objA.getVolume()<<endl;
+}
+
+#include<iostream>
+using namespace std;
+ 
+class Box{
+    float  height;
+    float  width;
+    float  length;
+    float  volume;
+    float surfacearea;
+ 
+    public:
+       Box(){}
+       Box(float h, float w, float l){
+         }
+       Box(Box & b){
+         }
+       void setHeight(float h){
+           height = h;
+       }
+       void setLength(float l){
+           length = l;
+       }
+       void setWidth(float w){
+           width = w;
+       }
+       double fnVolume(){
+         }
+       double  fnsurfacearea(){
+           return surfacearea;
+       }
+       float  getVolume(){
+           return volume;
+       }
+       float getSurfaceArea(){
+           return surfacearea;
+       }
+       void Print(){
+           cout <<"volume is : "<<volume<<endl;
+           cout <<"surfacearea is:"<<surfacearea<<endl;
+       }
+       float getHeight(void){
+           return height;
+       }
+       float getLength(void){
+           return length;
+       }
+       float getWidth(void){
+           return width;
+       }
+ 
+};
+class Boxcolor:public Box{
+     float color;
+     public:
+       Boxcolor(){}
+       Boxcolor(float h,float  w,float l,float c):Box(h,w,l){
+           color = c;
+       }
+       void setColor(float c){
+           color = c;
+       }
+       float getColor(){
+           return color;
+       }
+ 
+};
+int main()
+{
+    Boxcolor   obj(12.6,21.3,41.5,0x10.1p0);
+    obj.fnVolume();
+    obj.fnsurfacearea();
+    obj.Print();
+ 
+    cout <<"color:"<<obj.getColor()<<endl;
+    cout <<"Lengthis :"<<obj.getLength()<<endl;
+    cout <<"Volume is :"<<obj.getVolume()<<endl;
+}
+
+#include<iostream>
+using namespace std;
+ 
+class Box{
+    float  height;
+    float  width;
+    float  length;
+    float  volume;
+    float surfacearea;
+ 
+    public:
+       Box(){}
+       ~Box(){cout <<"Box";}
+       Box(float h, float w, float l){
+          }
+       Box(Box & b){
+          }
+       void setHeight(float h){
+           height = h;
+       }
+       void setLength(float l){
+           length = l;
+       }
+       void setWidth(float w){
+           width = w;
+       }
+       double fnVolume(){
+          }
+       double  fnsurfacearea(){
+          }
+       float  getVolume(){
+           return volume;
+       }
+       float getSurfaceArea(){
+           return surfacearea;
+       }
+       void Print(){
+           cout <<"volume is : "<<volume<<endl;
+           cout <<"surfacearea is:"<<surfacearea<<endl;
+       }
+       float getHeight(void){
+           return height;
+       }
+       float getLength(void){
+           return length;
+       }
+       float getWidth(void){
+           return width;
+       }
+ 
+};
+class Boxweight:public  Box{
+     float weight;
+     public:
+       Boxweight(){}
+       ~Boxweight(){cout <<"Boxweight"<<endl;}
+       Boxweight(float  w){
+           weight = w;
+       }
+       Boxweight(float h,float  w,float l,float m):Box(h,w,l){
+           weight = m;
+       }
+       float setWeight(float w){
+           weight = w;
+       }
+       float getWeight(void){
+           return weight;
+       }
+ 
+};
+class Boxcolor:public Box{
+     float color;
+     public:
+       Boxcolor(){}
+       ~Boxcolor(){cout <<"Boxcolor"<<endl;}
+       Boxcolor(float  c){
+           color  = c;
+       }
+       Boxcolor(float h,float  w,float l,float c):Box(h,w,l){
+           color = c;
+       }
+       float setColor(float c){
+           color = c;
+       }
+       float getColor(){
+           return color;
+       }
+ 
+};
+class Shipment: public Boxcolor,public Boxweight{
+     float cost;
+     public:
+       Shipment(){}
+       ~Shipment(){cout <<"Shipment"<<endl;}
+       Shipment(float h,float  w,float l,float c,float m ,float cost):Box(h,w,l),Boxweight(m),Boxcolor(c){
+           this->cost = cost;
+       }
+       float setColor(float c){
+           cost = c;
+       }
+       float getColor(){
+           return cost;
+       }
+ 
+};
+int main()
+{
+    Shipment   *obj = new Shipment(12.6,21.3,41.5,99.9,0x45,1000.00);
+    obj->fnVolume();
+    obj->fnsurfacearea();
+    obj->Print();
+ 
+    cout <<hex<<"color:"<<obj->getColor()<<endl;
+    cout <<"Lengthis :"<<obj->getLength()<<endl;
+    cout <<"Volume is :"<<obj->getVolume()<<endl;
+    delete obj;
+}
+
+
+/************************************************************************
+*	File name: program7.cpp						*
+*	Version No:1.3							*
+*       Description : Dynamic initialization through Copy constructors  *
+*********************************************************************/  
+ 
+#include<iostream>
+using namespace std;
+ 
+class Vector 
+{
+	int *v;
+	int sz;
+     public:
+	Vector(void){ v =NULL; sz=0;}
+	Vector (int size) 
+	{
+		cout <<"One argument cons\n";
+	}
+	Vector (Vector & v2);	//Copy constructor
+	~Vector () 
+	{
+	}
+	int &elem (int i) 
+	{
+	}
+	void show ();
+};
+ 
+Vector::Vector (Vector & tempv) 
+{
+}
+void Vector::show () 
+{
+}
+ 
+int main () 
+{
+	int i;
+	Vector obj;
+	Vector v1 (5), v2 (5);
+	for (i = 0; i < 5; i++)
+		v1.elem(i) = i + 1;
+ 
+//	v1 = v2;	// Bit wise copy is done
+	Vector v3 =v1; //Copy constructor is called v3(v2)
+	//Vector v3 = v2; //Copy constructor is called v3(v2)
+ 
+	cout << "\nVector v1:";
+	v1.show ();
+	//cout << "\nVector v2:";
+	//v2.show ();
+	cout << "\nVector v3:";
+	v3.show ();
+	Vector v4 = v3;	//Copy constructor is invoked v4(v3)
+	cout <<endl;
+	v4.show ();
+}
+
+class Space
+{
+ 
+	public:
+		Space()
+		{
+			m_X=0;    m_Y=0;
+		}
+		Space(int a, int b)
+		{
+			m_X = a;
+			m_Y = b;
+		}
+		void mShow()
+		{
+			cout << " m_X = " <<m_X << endl;
+			cout << " m_Y = " <<m_Y << endl;
+		}
+		Space operator+(Space s1);
+		Space operator-(Space s1);
+		Space operator=(Space s1);
+		Space operator++(); 
+     private:
+        int m_X;
+        int m_Y;
+};
+
+Space Space :: operator + (Space s1)
+{
+	Space temp;
+	
+	return temp;
+}
+
+Space Space :: operator - (Space s1)
+{
+	Space temp;
+	
+	return temp;
+}
+Space Space :: operator = (Space s1)
+{
+	
+	return *this;
+}
+
+Space Space :: operator ++ ( )
+{
+	
+	return *this;
+}
+
+main ()
+{
+
+	Space s1(10,20), s2(30,40), s3(50,60);
+	s1.mShow();
+	s2.mShow();
+	
+	++s1;
+	s1.mShow();
+	s1 = s1 + s2;
+	s1.mShow();
+	
+	s1 = s2 = s3;
+	s1.mShow();
+	s2.mShow();
+	s1 = s1 + (++s2);
+	s1.mShow();
+	return(0);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

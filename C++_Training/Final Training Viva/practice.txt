@@ -1,0 +1,262 @@
+#include <iostream>
+using namespace std;
+
+class Point
+{
+    int x, y;
+public:
+    Point() : x(10),y(23)
+    {
+        
+    }
+   Point(const Point &p) { x = p.x; y = p.y; }
+   int getX() { return x; }
+   int getY() { return y; }
+};
+
+int main()
+{
+    Point p1;
+    Point p2 = p1;
+    cout << "x = " << p2.getX() << " y = " << p2.getY();
+    return 0;
+}
+
+
+
+
+------------------------------------------------------------------------
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+class String
+{
+    // char *str;
+    int a ;
+public:
+     String(const char *s);
+     void change(int index, char c) { str[index] = c; }
+     char *get() { return str; }
+};
+
+String::String(const char *s)
+{
+    int l = strlen(s);
+    str = new char[l+1];
+    strcpy(str, s);
+}
+
+int main()
+{
+   String s1(\"geeksQuiz\");
+   String s2 = s1; // b  by b cpy
+   s1.change(0, \'G\');
+   cout << s1.get() << \" \";
+   cout << s2.get();
+}
+
+
+------------------------------------------------------------------------
+
+#include<iostream>
+using namespace std ;
+class A 
+{
+    int a;
+    public :
+    // the below is needed for conversion constructor
+        A(int args =-12) : a(args)
+        {
+            cout<<"A = " << a ;
+        }
+        void getter ()
+        {
+            cout<<".." << a ;
+        }
+};
+int main()
+{
+    A object;
+    // A object1 =object ;
+    // A object1(20);
+    A object1 =234;
+    object1.getter();
+    
+}
+
+// A object1 =object ;       //Compiler will create a byte by byte copy even no copy constructor is there 
+// A object1 =234;          // compailer automaticaklly call the convertion constructor 
+------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+
+class Test
+{
+public:
+   Test(Test &t) { }
+   Test()        { }
+};
+
+Test fun()
+{
+    cout << \"fun() Called\\n\";
+    Test t;
+    return t;
+}
+
+int main()
+{
+    Test t1;
+    Test t2 = fun();
+    return 0;
+}
+//copy constructor should be always receiver by constant and reference on argument type
+
+------------------------------------------------------------------------
+ #include <iostream>
+using namespace std;
+
+class X 
+{
+public:
+    int x;
+    int y;
+};
+
+int main()
+{
+    X a = {10,43};
+    X b = a;
+   cout << a.x << " " << b.x;
+   cout << a.y << " " << b.y;
+   
+    return 0;
+}
+
+//like structure the data member can be initialized through the array 
+
+------------------------------------------------------------------------
+
+#include <iostream>
+using namespace std; 
+class A
+{
+    int id;
+    static int count;
+public:
+    A() {
+        count++;
+        id = count;
+        cout << "constructor for id " << id << endl;
+    }
+    ~A() {
+        cout << "destructor for id " << id << endl;
+    }
+};
+ 
+int A::count = 0;
+ 
+int main() {
+    A a[3];
+    return 0;
+}
+
+//rollback when a des of a obj is called 
+
+
+
+------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+
+class Test
+{
+    static int x;
+    int *ptr;
+    int y;
+};
+
+int main()
+{
+    Test t;
+    cout << sizeof(t) << " \n";
+    cout << sizeof(Test *);
+}
+int i = 10;
+int & a = i;
+int & b = a
+
+
+
+
+------------------------------------------------------------------------
+
+#include <iostream>
+#include<string>
+using namespace std;
+
+class Base
+{
+public:
+    virtual string print() const
+    {
+        return "This is Base class";
+    }
+};
+
+class Derived : public Base
+{
+public:
+    virtual string print() const
+    {
+      	return "This is Derived class";
+    }
+};
+
+void describe(Base p)
+{
+  string sttt = p.print();  
+  cout << p.print() <<sttt<< endl;
+}
+
+int main()
+{
+    Base b;
+    Derived d;
+    describe(b);
+    describe(d);
+    return 0;
+}
+
+
+// we can return  from a cponst func and alter anything 
+
+
+
+------------------------------------------------------------------------
+
+#include<iostream>
+using namespace std;
+
+int &fun()
+{
+    static int x = 10;
+    return x;
+}
+int main()
+{
+    fun() = 30;
+    cout << fun();
+    return 0;
+}
+
+
+
+------------------------------------------------------------------------
+
+
+
+
+------------------------------------------------------------------------
+
