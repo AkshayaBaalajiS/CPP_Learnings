@@ -60,7 +60,4 @@ int main()
 	// weak_ptr <NewNameSpace::Sample> weak_ptr_2(new NewNameSpace::Sample());
 	cout<<"+++++++++++++++++++++++++++++++++++++++++++++++++++\n";
 	
-
-	
-
 }
