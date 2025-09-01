@@ -12,5 +12,7 @@ int main()
 	cout<<"\nPrint through the cout \n";
 	cout.put('a');	
 
+	cout.flush(); // for flushing the stream 
+
 	cout.write("\nThis is the simple print stmt ", 32); 
 }
