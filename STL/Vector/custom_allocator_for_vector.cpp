@@ -40,7 +40,6 @@ int main()
 	vector_i.push_back(12);
 	cout<<"----------------------\n\n";
 
-
 	cout<<"----------------------\n";
 	vector_i.push_back(12);
 	vector_i.push_back(12);
@@ -52,7 +51,6 @@ int main()
 	vector_i.push_back(12);
 	cout<<"----------------------\n\n";
 	
-
 	cout<<"----------------------\n";
 	vector_i.push_back(12);
 	vector_i.push_back(12);
