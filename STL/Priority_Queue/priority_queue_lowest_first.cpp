@@ -28,6 +28,4 @@ int main()
 		pql.pop();
 		cout<<"A = " << a<<endl; 
 	}
-
-	
 }
