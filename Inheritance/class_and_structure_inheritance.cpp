@@ -45,8 +45,6 @@ class classA : public A
 		{
 
 		}
-
-
 };
 
 
