@@ -72,7 +72,6 @@ int main()
 	static int a =234;
 
 	void** voidPtr;
-
 	pthread_create(&thread1, NULL, function1, NULL);
 	pthread_create(&thread2, NULL, function2, &a);
 
