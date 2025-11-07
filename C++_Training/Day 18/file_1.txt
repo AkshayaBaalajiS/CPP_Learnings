@@ -1,0 +1,25 @@
+This is a vector 
+to hold string
+values 
+it is like 
+a dynamic array 
+123
+45
+4356
+
+et
+f
+vc
+df
+
+ssd
+
+sds
+sd
+ds
+d
+r
+dr
+eer
+12
+09

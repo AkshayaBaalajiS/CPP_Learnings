@@ -1,0 +1,321 @@
+
+
+/* Complete the below program to illustrate private method*/
+
+class Book{
+    public:
+    class chapter {
+        char   chap_name[25];
+        int number;
+        int pages;
+        public:
+           chapter(){}
+           chapter(char *ch,int  n,int  p){
+              
+           }           
+           void display(){
+               cout << chap_name<<endl;
+               cout <<number <endl;
+               cout << pages<<endl;
+           }
+    };
+    Book(char *bn,int amt,char  *name,int n,int p){
+          
+        }
+        void display(){
+           cout << name<<endl;
+           cout <<price<endl;
+           cout << "******chapter info ****" <<endl;
+
+           cout << pages<<endl;
+        }
+    private:
+        chapter   sub(name,n,p);
+        char   name[25];
+        int price ;
+};
+
+/* Complete the below program.
+     This program is to illustrate dynamic memory allocation and copy constructor
+   */
+
+#include<iostream>
+using namespace std;
+
+class Array {
+    int *data;
+    int size;
+    int capacity;
+    public:
+         Array(){
+             data=nullptr;
+             size=capacity=0;
+         }
+         Array(int sz){
+           
+         }
+         Array(Array & ref ){
+             
+         }
+         ~Array(){
+             delete [] data;
+             data=nullptr;
+         }
+         void addbeg(int val){
+           
+         }
+         void append(int val){
+             
+         }
+         void insert(int pos,int val){
+            
+             }
+             data[pos]=val;
+         }
+         int Size(){ return size;}
+         int deletebeg(){
+            
+             return temp;
+         }
+         int deleteend(){
+             --size;
+             return data[size];
+         }
+         int delete_pos(int pos){
+             int  i, temp;
+           
+             return temp;
+
+         }
+         void Print(){
+             int  i, temp;
+             for(i=0; i < size;i++)
+                cout <<data[i]<<endl;
+         }
+         int getVal(int pos){
+             return(data[pos-1]);
+         }
+};
+
+
+int main()
+{
+    Array   array(100);
+    array.addbeg(10);
+    array.append(20);
+    array.insert(2,30);
+    array.addbeg(100);
+    array.append(200);
+    array.insert(5,300);
+    
+    cout <<"Size of Array is"<<array.Size();
+    cout <<"Data at "<<3<<array.getVal(3)<<endl; 
+
+    array.Print();
+    cout <<"*******************************\n";
+    cout <<array.deletebeg()<<endl;
+    cout <<array.deleteend()<<endl;
+    cout <<array.delete_pos(2)<<endl;
+    cout <<"*******************************\n";
+    array.Print();
+    cout <<"Size of Array is"<<array.Size()<<endl;
+
+
+    Array sec_obj(array);
+
+    sec_obj.addbeg(10);
+    sec_obj.append(20);
+    sec_obj.insert(2,30);
+    sec_obj.addbeg(100);
+    sec_obj.append(200);
+    sec_obj.Print();
+    cout <<"Size of Array is"<<sec_obj.Size();
+}
+
+
+
+/* Complete the below program */
+
+/****************header.h***********************/
+
+#ifndef __HEADER_H__
+#define __HEADER_H__
+
+
+#include<iostream>
+#include<cstring>
+
+using namespace std;
+class Person
+{
+	char *name;
+	char *address;
+	char *phone;
+      public:
+	void init(void);
+	void clear(void);
+	void setname(char const *str);
+	void setaddress(char const *str);
+	void setphone(char const *str);
+	char const *getname(void)	const;
+	char const *getaddress(void)	const;
+	char const *getphone(void)	const;
+      void printperson(Person const &);
+};
+#endif
+
+
+
+
+
+
+/*************************Person.cpp**************/
+
+// example to constant parameter
+#include"header.h"
+int num;
+void Person :: init()
+{
+      name=address=phone=0;
+}
+void Person :: clear()
+{
+      delete name;
+      delete address;
+      delete phone;
+}
+void Person :: setname(char const *str)
+{
+	
+}
+void Person :: setaddress(char const *str)
+{
+     
+}
+void Person :: setphone(char const *str)
+{
+      
+}
+
+char const *Person :: getname() const
+{
+	   num = 10;
+       return name;
+}
+char const *Person :: getaddress() const
+{
+       return address;
+}
+char const *Person :: getphone() const
+{
+       return phone;
+}
+void Person::printperson(Person const &p)
+{
+       if(p.getname())
+	cout<<"name="<<p.getname()<<endl;
+       if(p.getaddress())
+	cout<<"address"<<p.getaddress()<<endl;
+       if(p.getname())
+	cout<<"phone="<<p.getphone()<<endl;
+}
+
+
+
+
+/***********************************************
+Inheritance
+Complete the below program 
+
+************************************************/
+
+#include<iostream>
+using namespace std;
+
+class Cube{
+    float  height;
+    float  width;
+    float  length;
+    float  volume;
+    float surfacearea;
+
+    public:
+       Cube(){
+          
+       }
+       Cube(float h, float w, float l){
+           
+       }
+       Cube(Cube & b){
+           
+       }
+       virtual ~Cube(){}
+       void setHeight(float h){
+           height = h;
+       }
+       void setLength(float l){
+           length = l;
+       }
+       void setWidth(float w){
+           width = w;
+       }
+       double fnVolume(){
+          
+       }
+       double  fnsurfacearea(){
+           
+       }
+       float  getVolume(){
+           return volume;
+       }
+       float getSurfaceArea(){
+           return surfacearea;
+       }
+       void Print(){
+           cout <<"volume is : "<<volume<<endl;
+           cout <<"surfacearea is:"<<surfacearea<<endl;
+       }
+       float getHeight(void){
+           return height;
+       }
+       float getLength(void){
+           return length;
+       }
+       float getWidth(void){
+           return width;
+       }
+
+};
+class Boxweight:public  Cube{
+     float weight;
+     public:
+       Boxweight(){}
+       Boxweight(float h,float  w,float l,float m):Cube(h,w,l){
+           weight = m;
+       }
+       float setWeight(float w){
+           weight = w;
+       }
+       float getWeight(void){
+           return weight;
+       }
+
+};
+int main()
+{
+    Boxweight   obj(12.6,21.3,41.5,45);
+    obj.fnVolume();
+    obj.fnsurfacearea();
+    obj.Print();
+
+    cout <<hex<<obj.getWeight()<<endl;
+    cout <<obj.getLength()<<endl;
+    cout <<obj.getVolume()<<endl;
+}
+
+
+
+
+
+
+
