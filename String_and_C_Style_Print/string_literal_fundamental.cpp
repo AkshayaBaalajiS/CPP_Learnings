@@ -15,5 +15,4 @@ int main()
 	// we are using the poinrt to modify the string through ptr for solving this use const  
 
 	const char * cPtr = "This is the const char * |  string literal ";
-
 }
