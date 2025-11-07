@@ -60,5 +60,4 @@ int main()
 	int * result_ptr = static_cast<int *>(*voidPtr);
 	cout<<"Value returned from the result pointer = " << *result_ptr <<endl;
 	pthread_join(thread2, NULL);
-
 }
