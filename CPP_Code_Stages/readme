@@ -1,0 +1,42 @@
+1. cpp source code 
+
+2. preprocessed file g++ -E .cpp -o .i
+The preprocessor expands:
+All #include headers
+All #define macros
+Removes comments
+Handles #ifdef conditions
+➡️ Output: A pure C++ source with no directives, only expanded code.
+
+3.  Compilation g++ -S .i -o .s
+Lexical Analysis → breaks code into tokens
+Syntax Analysis → builds AST (Abstract Syntax Tree)
+Semantic Analysis → checks type correctness
+Optimization → simplifies constant operations, inlines, etc.
+Code Generation → emits assembly (.s)
+
+4. Assembling g++ -c .s -o -o 
+Assembler converts your assembly to machine code (binary opcodes), producing
+
+5. Linking g++ -o -o .exe
+Combines: 
+All .o files (from your project and libraries)
+Standard libraries (like libstdc++)
+Resolves all function calls and global variable references
+
+6. Loading  ./.exe
+The OS loader:
+Maps .text, .rodata, .data, .bss into virtual memory
+Sets up stack and heap
+Initializes runtime (like constructors for globals)
+Jumps to main()
+
+7. Execution 
+Now the CPU executes instructions from .text, using:
+.data / .bss for globals
+Stack for locals
+Heap for dynamic allocations
+When the program ends:
+Stack is auto-freed
+Heap memory (from new) is freed by destructors or unique_ptr
+OS cleans everything on process exit
