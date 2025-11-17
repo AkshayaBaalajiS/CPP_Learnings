@@ -1,0 +1,15 @@
+So = default applies only to these 6:
+
+Default constructor
+
+Destructor
+
+Copy constructor
+
+Copy assignment
+
+Move constructor
+
+Move assignment
+
+You cannot default a norma
