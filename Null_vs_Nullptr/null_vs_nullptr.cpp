@@ -13,3 +13,6 @@ int main()
 	// function(nullptr); // nullptr cant be typecasted to int so error occur here  
 	
 }
+/*
+Learning Null will be typecasted to int and NullPtr will not be typecasted to int 
+*/
