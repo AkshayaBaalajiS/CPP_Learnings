@@ -15,7 +15,6 @@ C++ does not have a // operator for floor division, like Python does. In C++, th
 //     return 0;
 // }
 
-
 #include <iostream>
 #include <cmath> // for std::floor
 
