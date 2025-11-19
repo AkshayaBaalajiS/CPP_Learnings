@@ -34,6 +34,4 @@ int main()
 	*/
 
 	cout<<"a =  " << ptr->a<<endl	;
-
-
 }
