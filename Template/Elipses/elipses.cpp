@@ -2,7 +2,7 @@
 #include <cstdarg>
 
 using namespace std;
-
+// elipses is not hting but hte variadic template without the template 
 void elipsesFunction(int n , ...)
 {
     cout<<"This is a elipsesFunction  .....\n";
