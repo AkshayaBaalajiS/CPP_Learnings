@@ -48,8 +48,4 @@ int main()
 	cout<<"C = " << c <<endl;
 	cout<<"D = " << d <<endl;
 	cout<<"E = " << e <<endl;
-	
-
-
-
 }
