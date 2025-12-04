@@ -56,6 +56,6 @@ int main()
 
 	// for simple 
 	void (*simFunc) () = simpleFunction;
-	simFunc();
+	simFunc(); 
 
 }	
