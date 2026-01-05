@@ -23,7 +23,7 @@ int main()
 
 	A obj;
 	obj.function1(); // this can be done 
-	obj.function2(); // this cant be done 
+	// obj.function2(); // this cant be done 
 	/*
 	void function2() && 
 hduser@hduser-virtual-machine:~/Desktop/CPP_Learnings/Reference_Qualifier$ g++ lreference_qualifier.cpp
@@ -44,9 +44,14 @@ You are calling a function that expects this to be an rvalue (A&&)
 
 But you are giving it an lvalue object (obj)
 
-That mismatch is NOT allowed → compilation error.
+That mismatch is NOT allowed → compilation error.	
 
 	*/
 	std::move(obj).function2(); // this can be done 
-	
+	(A()).function2();
+	/*
+(*(new A())).function2();
+CRITICAL RULE 🔥
+Dereferencing a pointer always produces an lvalue
+	*/
 }
