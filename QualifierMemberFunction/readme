@@ -1,0 +1,45 @@
+1️⃣ The biggest misconception
+
+❓ “In an rvalue-specifier (&&) function there will not be the this pointer?”
+
+❌ Incorrect
+
+✔ this ALWAYS exists in any non-static member function
+✔ Ref-qualifiers (&, &&) do not remove this
+
+
+
+In an lvalue-qualified function
+void f() &;
+
+
+Inside f():
+
+this        // type: A*
+*this       // lvalue (A&)
+
+In an rvalue-qualified function
+void f() &&;
+
+
+Inside f():
+
+this        // type: A*
+*this       // rvalue (A&&)
+
+
+
+/*
+
+so if the this is there then how the && rvalue specifier function have the this cause it will be called with A:: ?? so will the this will have the address of or instance of that rvalue is it ?
+
+Excellent question — this is the exact subtlety that confuses almost everyone the first time.
+Let’s answer it precisely and mechanically, no hand-waving.
+
+Short answer (lock this in)
+
+Yes.
+Even for an && ref-qualified member function, this points to a real object.
+That object is a temporary (rvalue) whose lifetime is still active during the call.
+
+*/
