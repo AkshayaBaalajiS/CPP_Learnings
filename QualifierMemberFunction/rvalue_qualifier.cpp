@@ -33,3 +33,4 @@ int main()
 	obj.type();
 	// obj.type1(); // this cant be done cause this will not be a arg in the rvalue specifier function 
 }
+
