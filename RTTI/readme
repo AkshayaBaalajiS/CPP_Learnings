@@ -1,1 +1,3 @@
 Return Time Type Information 
+
+RTTI only works for polymorphic classes
