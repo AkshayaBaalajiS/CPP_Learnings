@@ -1,0 +1,29 @@
+Initialize internal pointer to nullptr
+
+Remove allocation from default constructor
+
+Enforce exclusive ownership semantics
+
+Delete copy constructor and copy assignment operator
+
+Implement move constructor with ownership transfer
+
+Nullify source pointer in move constructor
+
+Implement move assignment operator
+
+Release previously owned resource during move assignment
+
+Handle self move-assignment safely
+
+Ensure destructor deletes owned resource exactly once
+
+Leave moved-from objects in a valid empty state
+
+Prevent memory leaks and double deletion
+
+Align behavior with std::unique_ptr semantics
+
+Follow RAII principles
+
+Mark move operations noexcept
