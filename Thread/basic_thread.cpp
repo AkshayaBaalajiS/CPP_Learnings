@@ -28,7 +28,6 @@ void  * function_1(void * arg)
 int main()
 {
 	cout<<"This is the program to ceck the thread how it works \n";
-
 	pthread_t thread_1 ;
 
 	// void * function_1(void * arg)
