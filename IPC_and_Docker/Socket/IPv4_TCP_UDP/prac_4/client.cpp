@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-	#ifdef TCP
+	#ifdef TCP 
 	cout<<"Client code of TCP\n";
 	#else
 	cout<<"Client code of UDP\n";
