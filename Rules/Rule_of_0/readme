@@ -1,0 +1,22 @@
+rule 0 works only if the class contains the member of RAII class type 
+	std::vector
+
+	std::string
+
+	std::array
+
+	std::unique_ptr
+
+	std::shared_ptr
+
+	std::mutex
+
+	std::fstream
+
+RAII types are classes that:
+
+	Allocate resources in their constructor
+
+	Release them in their destructor
+
+	Correctly implement copy / move / destruction
