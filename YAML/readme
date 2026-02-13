@@ -1,0 +1,60 @@
+
+Used for:
+
+Config files
+CI/CD pipelines
+Docker / Kubernetes
+Embedded configs
+ML models
+Game engines
+C++ apps
+
+
+
+.yaml vs .yml
+
+No difference.
+
+Both are exactly the same format.
+
+
+
+YAML						JSON
+Easier to read			More strict
+Supports comments			No comments
+Cleaner syntax			Braces heavy
+Multi-line friendly			Less readable
+
+
+Yaml example :
+Nested structure
+server:
+  host: 127.0.0.1
+  port: 8080
+
+List
+ports:
+  - 8080
+  - 9090
+  - 10000
+
+Array of objects
+clients:
+  - name: client1
+    ip: 192.168.1.10
+  - name: client2
+    ip: 192.168.1.11
+
+Boolean
+enabled: true
+debug: false
+
+Comments (important)
+# This is a comment
+
+
+YAML Parser library :
+yaml-cpp
+	sudo apt install libyaml-cpp-dev
+	sudo apt-get install libyaml-cpp-dev
+
