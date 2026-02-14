@@ -1,0 +1,33 @@
+Attendance:
+  1:
+    name: Akshaya Baalaji
+    Roll: 1
+    Age: 21
+    Address: Thanjavur
+    city:
+      - TVR 
+      - TNJ
+      - KMU
+      - MAS
+  2:
+    name: Baalaji S
+    Roll: 2
+    Age: 22
+    Address: Thanjavur 
+    city:
+      C1: TVR
+      C2: TNJ
+      C3: KMU
+      C4: MAS
+  3:
+    name: Chris Harry 
+    Roll: 2
+    Age: 23
+    Address: Chennai 
+    city:
+      - 1: TVR
+      - 2: TNJ
+      - 3: KMU
+      - 4: MAS
+  
+  
