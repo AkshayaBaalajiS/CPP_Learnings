@@ -1,0 +1,25 @@
+Attendance:
+  1:
+    Name: Akshaya baalaji S
+    age: 23
+    Address: Thanjavur
+    City:
+      - TNJ
+      - MAS
+      - BLR
+    City City:
+      1: TNJ
+      2: MAS
+      3: BLR
+  2:
+    Name: Baalaji S
+    age: 23
+    Address: Thanjavur
+    City:
+      - TVR
+      - MAS
+      - BLR
+    City City:
+      1: TVR
+      2: MAS
+      3: BLR
