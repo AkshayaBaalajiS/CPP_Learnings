@@ -1,0 +1,43 @@
+In embedded systems:
+	volatile tells the compiler that the value can change outside the program’s control.
+
+Outside control means:
+	Hardware register
+	Interrupt Service Routine (ISR)
+	DMA controller
+	Memory-mapped peripheral
+	Another core
+	External device
+
+when volatile used compiler must:
+👉 Read from memory every iteration
+👉 Not cache in CPU register
+
+
+Volatile does NOT:
+	❌ Make code thread-safe
+	❌ Provide atomicity
+	❌ Provide memory ordering
+	❌ Prevent race conditions
+	❌ Replace mutex
+	❌ Replace std::atomic
+
+Feature	            volatile	std::atomic
+Prevent optimization	✅      	✅
+Atomic operation	    ❌      	✅
+Memory ordering			❌			✅
+Thread-safe				❌			✅
+Used for hardware registers	✅		❌
+
+Embedded rule:
+	👉 volatile for hardware
+	👉 atomic for multithreading
+
+
+Why Not Mark Everything Volatile?
+
+Because:
+	It disables optimizations
+	Slows down code
+	Increases memory traffic
+	Not needed for normal variables
