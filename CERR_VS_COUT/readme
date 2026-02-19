@@ -1,0 +1,17 @@
+| Situation             | Use  |
+| --------------------- | ---- |
+| Normal program output | cout |
+| Debug messages        | cerr |
+| Logging errors        | cerr |
+| Progress updates      | cout |
+
+
+cerr usage
+	Buffered output may not appear before crash.
+	Use cerr for crash diagnostics.
+	In embedded systems, buffering behavior matters.
+
+Difference between cout and cerr?
+	cout is buffered and used for normal output, while cerr is unbuffered and used for error output.
+	cerr flushes immediately, making it suitable for debugging.
+	Both can be redirected separately since they map to stdout and stderr.
