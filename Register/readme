@@ -1,0 +1,23 @@
+register is a storage class specifier that was originally used to suggest that a variable should be stored in a CPU register instead of RAM.
+
+A register is:
+	Very small storage
+	Inside the CPU
+	Extremely fast (1 clock access)
+	Used for calculations
+
+Important: In Modern C++ register Does Nothing
+	Since C++11, register is deprecated.
+	Since C++17, it is removed.
+
+Why?
+Because:
+	Modern compilers are WAY smarter than humans.
+	The compiler automatically decides:
+	Which variables go in registers
+	Which go in memory
+	When to optimize
+
+
+
+register was a storage class specifier suggesting that a variable be stored in a CPU register for faster access. It is deprecated and removed in modern C++ because compilers automatically optimize register allocation.
