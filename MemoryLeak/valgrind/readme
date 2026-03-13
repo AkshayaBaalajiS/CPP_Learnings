@@ -1,0 +1,278 @@
+Valgrind – Quick README (C++ Memory Debugging Guide)
+1. What is Valgrind
+
+Valgrind is a dynamic analysis tool used to detect memory-related problems in programs.
+
+It runs your program inside a virtual CPU and monitors all memory operations.
+
+Most commonly used tool inside Valgrind is Memcheck.
+
+Main purpose:
+
+Detect memory leaks
+
+Detect invalid memory access
+
+Detect double free
+
+Detect use-after-free
+
+Detect uninitialized memory usage
+
+2. Install Valgrind
+
+Linux / WSL:
+
+sudo apt install valgrind
+
+Check installation:
+
+valgrind --version
+3. Compile Program Properly
+
+Always compile with debug symbols.
+
+g++ -g program.cpp
+
+Why -g is important:
+
+Shows file name
+
+Shows line number
+
+Shows function where error occurred
+
+Without -g, Valgrind output is harder to read.
+
+4. Basic Command to Run Valgrind
+valgrind ./a.out
+
+Recommended command:
+
+valgrind --leak-check=full ./a.out
+
+Meaning:
+
+--leak-check=full → shows detailed memory leak info.
+
+5. Example Program
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int *ptr = new int[100];
+    int *ptr1 = new int[1000];
+
+    ptr1 = ptr;
+
+    delete [] ptr;
+}
+
+Memory leak occurs because pointer to new int[1000] is lost.
+
+6. Understanding Valgrind Output
+
+Example output:
+
+HEAP SUMMARY:
+    in use at exit: 4000 bytes in 1 blocks
+    total heap usage: 4 allocs, 3 frees
+
+LEAK SUMMARY:
+    definitely lost: 4000 bytes
+
+Important meanings:
+
+in use at exit
+
+Memory that was not freed before program exit.
+
+total heap usage
+
+Total allocations done by:
+
+your program
+
+C++ runtime
+
+libraries
+
+definitely lost
+
+Memory completely unreachable → real leak
+
+indirectly lost
+
+Memory leaked because another leaked block referenced it.
+
+possibly lost
+
+Pointer may exist but Valgrind can't confirm.
+
+still reachable
+
+Memory still referenced but not freed.
+
+7. Common Errors Valgrind Detects
+1️⃣ Memory Leak
+
+Example:
+
+int* p = new int[100];
+
+No delete.
+
+Output:
+
+definitely lost: 400 bytes
+2️⃣ Invalid Read
+
+Example:
+
+int arr[5];
+arr[10] = 5;
+
+Output:
+
+Invalid write of size 4
+3️⃣ Use After Free
+
+Example:
+
+int* p = new int;
+delete p;
+*p = 10;
+
+Output:
+
+Invalid write of size 4
+4️⃣ Double Free
+
+Example:
+
+delete p;
+delete p;
+
+Output:
+
+Invalid free()
+8. Important Valgrind Options
+Show detailed leaks
+valgrind --leak-check=full ./a.out
+Show origins of uninitialized values
+valgrind --track-origins=yes ./a.out
+Show full stack trace
+valgrind --leak-check=full --show-leak-kinds=all ./a.out
+9. Why Valgrind Shows More Memory Than Your Code
+
+Valgrind counts allocations from:
+
+C++ runtime
+
+iostream
+
+glibc
+
+system libraries
+
+Example:
+
+Your program:
+
+4400 bytes
+
+Valgrind may show:
+
+79,000 bytes allocated
+
+Because it includes library allocations.
+
+Focus on:
+
+definitely lost
+
+This is your actual leak.
+
+10. Performance Impact
+
+Valgrind slows programs significantly.
+
+Typical slowdown:
+
+10x – 30x slower
+
+Because every memory access is monitored.
+
+11. When to Use Valgrind
+
+Use Valgrind when:
+
+Debugging memory leaks
+
+Debugging segmentation faults
+
+Debugging invalid memory access
+
+Debugging heap corruption
+
+Especially useful in:
+
+C
+
+C++
+
+embedded systems
+
+systems programming
+
+12. Valgrind vs AddressSanitizer
+Feature	Valgrind	AddressSanitizer
+Speed	slow	fast
+Requires recompilation	no	yes
+Memory errors detection	excellent	excellent
+Used in CI pipelines	less common	very common
+
+Typical workflow:
+
+Development → AddressSanitizer
+Deep debugging → Valgrind
+13. Best Practice to Avoid Memory Leaks
+
+Prefer RAII containers instead of raw pointers.
+
+Good:
+
+vector<int> v(100);
+
+Bad:
+
+int* p = new int[100];
+
+Even better:
+
+smart pointers
+
+Example:
+
+unique_ptr<int[]> p(new int[100]);
+14. Professional Debugging Workflow
+
+Typical workflow for C++ engineers:
+
+compile with -g
+run program with AddressSanitizer
+run tests
+run Valgrind for leak detection
+fix memory errors
+15. Key Takeaways
+
+Valgrind detects runtime memory errors.
+
+Use --leak-check=full for detailed reports.
+
+Focus on definitely lost memory.
+
+Compile with -g for useful debugging information.
+
+Expect extra allocations from libraries.
