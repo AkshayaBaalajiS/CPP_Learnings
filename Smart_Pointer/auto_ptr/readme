@@ -1,0 +1,3 @@
+std::auto_ptr (automatic pointer) is a type of smart pointer in C++. It was the first smart pointer introduced in the C++ standard library to help manage dynamically allocated memory automatically and prevent memory leaks. 
+
+However, it is important to note that std::auto_ptr was deprecated in C++11 and completely removed in C++17 due to its problematic ownership transfer semantics. 
