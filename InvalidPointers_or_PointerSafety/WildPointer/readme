@@ -1,0 +1,10 @@
+Wild pointer — a pointer that has been declared but never initialized. It holds whatever garbage value was in that memory location. It is not null, not previously valid — it is purely random.
+
+
+int* wild;          // wild pointer   — uninitialized, points anywhere
+int* dangling;      // after:
+int x = 5;
+dangling = &x;      // valid
+// x goes out of scope → dangling pointer
+
+int* null = nullptr; // null pointer
