@@ -1,0 +1,18 @@
+In value semantics, a copy of the object is created and passed to the function, so the function operates on an independent object with its own lifetime. Changes inside the function do not affect the original object.
+
+In reference semantics, the function receives a reference (alias) to the original object, so no copy is made. Both the caller and the function operate on the same object, sharing the same lifetime. However, ownership is not transferred — the caller still owns the object.
+
+
+
+------------------------------------------------------------
+void function(int a)
+{
+	a = 33;
+}
+int main()
+{
+	int a = 221;
+	function(a);
+}
+The function parameter x is passed by value, so a copy of a is created when the function is called. The function operates on this copy stored in its own stack frame. When x is modified inside the function, it only modifies the local copy, not the original variable a. When the function returns, the stack frame is destroyed and the original variable remains unchanged.
+---------------------------------------------------------------
