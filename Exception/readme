@@ -1,0 +1,5 @@
+Why are exceptions bad in embedded systems?
+
+You say:
+
+Exceptions introduce non-deterministic timing due to stack unwinding, increase binary size, require runtime support, complicate debugging, and are difficult in safety-certified systems. Therefore embedded and real-time systems often disable exceptions and use error codes instead.
