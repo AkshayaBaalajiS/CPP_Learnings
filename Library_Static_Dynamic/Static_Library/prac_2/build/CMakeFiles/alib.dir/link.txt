@@ -1,0 +1,2 @@
+/usr/bin/ar qc libalib.a CMakeFiles/alib.dir/header.cpp.o
+/usr/bin/ranlib libalib.a

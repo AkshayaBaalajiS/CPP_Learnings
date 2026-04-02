@@ -1,0 +1,4 @@
+/home/akshayabaalajis/CPP_Learnings/Library_Static_Dynamic/Static_Library/prac_2/build/CMakeFiles/alib.dir
+/home/akshayabaalajis/CPP_Learnings/Library_Static_Dynamic/Static_Library/prac_2/build/CMakeFiles/output.dir
+/home/akshayabaalajis/CPP_Learnings/Library_Static_Dynamic/Static_Library/prac_2/build/CMakeFiles/edit_cache.dir
+/home/akshayabaalajis/CPP_Learnings/Library_Static_Dynamic/Static_Library/prac_2/build/CMakeFiles/rebuild_cache.dir
