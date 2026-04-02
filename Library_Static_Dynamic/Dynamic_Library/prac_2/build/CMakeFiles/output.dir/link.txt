@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/output.dir/main.cpp.o -o output  -Wl,-rpath,/home/akshayabaalajis/CPP_Learnings/Library_Static_Dynamic/Dynamic_Library/prac_2/build libalib.so 
