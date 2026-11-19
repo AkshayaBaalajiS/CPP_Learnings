@@ -15,6 +15,7 @@ optional<int> function(bool var)
 	}
 }	
 
+
 int main(int args, char ** argv)
 {
 	cout<<"This is the parent code \n";
@@ -42,5 +43,20 @@ int main(int args, char ** argv)
 	{
 		cout<<"has value failed in optional \n";
 	}
+
+	optional<int> (*func)(bool) = function;
+	auto lambdaFunc = func(var).and_then([&](const int & ref) -> optional<int>
+	{
+		return ref;
+	});
+
+	if (lambdaFunc.has_value()) {
+	    cout << "Result: " << *lambdaFunc << "\n";
+	} else {
+	    cout << "Result is empty (nullopt)\n";
+	}
+
+	cout << "Result: " << lambdaFunc.value_or(-1) << "\n";
 	
+
 }	
